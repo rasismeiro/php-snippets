@@ -59,12 +59,12 @@ function download($filename, $directory = null, $inline = false) {
     $fileName = basename($filename);
     $filePath = $directory . '/' . $fileName;
 
-    if (!file_exists($fileName)) {
+    if (!file_exists($filePath)) {
         header($protocol . ' 404 Not Found', true, 404);
         exit;
     }
 
-    if (!is_readable($fileName)) {
+    if (!is_readable($filePath)) {
         header($protocol . ' 403 Forbidden', true, 403);
         exit;
     }
